@@ -1,0 +1,24 @@
+# Detection
+model: "../models/yolov8n.onnx"
+input_size: 640
+confidence_threshold: 0.25
+nms_iou_threshold: 0.45
+classes: [2, 3, 5, 7]  # COCO class IDs for car(2), motorcycle(3), bus(5), truck(7)
+
+# Counting & tracking
+max_disappeared: 30
+max_distance: 80  # pixels
+min_frames_to_count: 3
+
+# Line for counting: defined as two points (x1,y1)-(x2,y2) relative to image size (0..1)
+count_line:
+  p1: [0.0, 0.6]
+  p2: [1.0, 0.6]
+# direction 'up' or 'down' considered positive depending on camera orientation
+line_direction: "both"
+
+# Output
+output_video: "results.mp4"
+save_csv: true
+csv_path: "results/counts.csv"
+display_fps: true

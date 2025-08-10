@@ -1,0 +1,18 @@
+# Build files
+/build/
+
+# VS Code settings
+.vscode/
+
+# Model output
+/models/
+
+# Python environment
+venv/
+
+# Generated files
+*.o
+traffic_counter
+
+# Logs
+*.log
